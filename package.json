@@ -1,0 +1,58 @@
+{
+  "name": "electron-strapi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop-strapi": "strapi develop",
+    "develop-electron": "electron .",
+    "build": "strapi build && electron-builder",
+    "build-strapi": "strapi build",
+    "build-electron": "electron-builder",
+    "start-linux": "cd ./dist && ./$npm_package_name-$npm_package_version.AppImage"
+  },
+  "devDependencies": {
+    "electron": "^16.0.1",
+    "electron-builder": "^22.14.5"
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "electron-is-packaged": "^1.0.2",
+    "knex": "0.21.18",
+    "sqlite3": "5.0.0",
+    "strapi": "3.6.8",
+    "strapi-admin": "3.6.8",
+    "strapi-connector-bookshelf": "3.6.8",
+    "strapi-plugin-content-manager": "3.6.8",
+    "strapi-plugin-content-type-builder": "3.6.8",
+    "strapi-plugin-email": "3.6.8",
+    "strapi-plugin-i18n": "3.6.8",
+    "strapi-plugin-upload": "3.6.8",
+    "strapi-plugin-users-permissions": "3.6.8",
+    "strapi-utils": "3.6.8"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "cfa674b2-75ca-4a7c-a3eb-30cb37bf5ee7"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": "^6.0.0"
+  },
+  "license": "MIT",
+  "main": "main.js",
+  "build": {
+    "appId": "com.electron.electron-strapi",
+    "files": [
+      "**/*",
+      "build"
+    ],
+    "linux": {
+      "asarUnpack": [
+        "**/node_modules/sharp/**"
+      ]
+    }
+  }
+}
