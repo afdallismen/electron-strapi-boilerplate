@@ -86,6 +86,8 @@ public/uploads/*
 !public/uploads/.gitkeep
 !public/index.html
 !public/robots.txt
+database/*
+!database/.gitkeep
 
 
 ############################
